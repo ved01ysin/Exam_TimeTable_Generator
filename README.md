@@ -1,144 +1,115 @@
 # Exam Timetable Generator in C
 
-This project implements a complete menu-driven **Exam Timetable Generation System** using **Greedy Ordering** and **Backtracking**.  
-The program assigns exams to valid rooms, timeslots, and available faculty members while ensuring that no conflicts occur.
+A complete menu-driven **Exam Timetable Generator** built in C using **Greedy Ordering** and **Backtracking**.  
+It assigns exams to valid rooms, timeslots, and faculty members while ensuring no conflicts occur.
 
 ---
 
 ## Features
 
-- Fully menu-driven (no hard-coded values required)
-- Configure:
-  - Number of exams
-  - Number of rooms
-  - Number of faculties
-  - Room names and capacities
-  - Subject names and student counts
-  - Faculty availability
-- Optional automatic generation of:
-  - Rooms
-  - Faculty names
-  - Subject names
-  - Conflict groups
-- Automatically generates weekday timeslots between two dates:
-  - Morning session: 09:00–12:00
-  - Afternoon session: 14:00–17:00
-- Uses a combination of Greedy Optimization + Backtracking Search
-- Prevents:
-  - Room clashes
-  - Faculty clashes
-  - Exam conflicts
-  - Room capacity overflow
-- Prints a clean, aligned exam timetable
+- Menu-driven interface  
+- User-configurable:
+  - Number of exams  
+  - Number of rooms  
+  - Number of faculties  
+  - Room names & capacities  
+  - Subjects & student counts  
+  - Faculty availability  
+- Optional auto-generation of:
+  - Rooms  
+  - Faculties  
+  - Subjects  
+  - Conflict groups  
+- Generates weekday-only timeslots:
+  - 09:00–12:00  
+  - 14:00–17:00  
+- Ensures:
+  - No room clashes  
+  - No faculty clashes  
+  - No exam conflicts  
+  - Room capacity is respected  
+- Prints a clean, aligned exam timetable  
 
 ---
 
 ## Algorithms Used
 
-### 1. Greedy Ordering
-All exams are sorted in descending order based on:
-1. Number of conflicts
-2. Number of students
+### Greedy Ordering
+Exams are sorted in descending order based on:
+1. Conflict count  
+2. Number of students  
 
-This reduces backtracking complexity.
+This reduces the time needed during backtracking.
 
-### 2. Backtracking
-For each exam, the solver attempts to place it in:
-- Every available timeslot
-- Every available room
+### Backtracking
+Tries to place each exam in:
+- Every timeslot  
+- Every room  
 
 A placement is valid only if:
-- The room capacity is sufficient
-- The room is free at that timeslot
-- The faculty is available
-- No conflicting exam is already scheduled in that timeslot
+- Room capacity is sufficient  
+- Room is free  
+- Faculty is available  
+- No conflicting exam is already in the same slot  
 
-If no placement is possible, the algorithm backtracks.
+If a placement fails, it backtracks.
 
 ---
 
 ## Project Structure
 
-Exam_TimeTable_Generator/
-│── menu_exam_timetable.c
-│── README.md
-└── (optional output files)
-
-yaml
-Copy code
+  `Exam_TimeTable_Generator/
+  │── menu_exam_timetable.c # Main program
+  │── README.md # Description
+  └── (optional files)`
 
 ---
 
-## How to Compile and Run
-
-### Compile
-gcc menu_exam_timetable.c -o timetable
-
-shell
-Copy code
-
-### Run
-./timetable
-
-makefile
-Copy code
-
-Windows:
-timetable.exe
-
-yaml
-Copy code
 
 ---
 
 ## Input Flow
 
-The program will prompt for:
+The program prompts for:
 
 1. Number of exams  
 2. Number of rooms  
-3. Number of faculty members  
-4. Start and end dates  
-5. Whether to manually enter or auto-generate:
-   - Room names and capacities
-   - Faculty names and availability
-   - Subject names and student counts
-   - Exam conflict groups
+3. Number of faculties  
+4. Start & end dates  
+5. Optional manual entry or auto-generation of:
+   - Room names & capacities  
+   - Faculty names & availability  
+   - Subject names & student counts  
+   - Exam conflict groups  
 
-After all inputs, the program generates and prints a timetable.
+After input collection, the algorithm generates a complete timetable.
 
 ---
 
-## Sample Output Format
-
-=== EXAM TIMETABLE GENERATED SUCCESSFULLY ===
-
-Exam | Subject | Students | Faculty | Date & Time | Room
-0 Calculus_12 50 Prof_Alex_Sharma 2025-05-03 Monday 09:00-12:00 Room_A_201
-1 Physics_43 45 Prof_Dylan_Kaur 2025-05-03 Monday 14:00-17:00 Room_B_310
-...
-
-yaml
-Copy code
 
 ---
 
 ## Requirements
 
-- GCC compiler
-- Windows, Linux, or macOS
+- GCC compiler  
+- Windows / Linux / macOS  
 
 ---
 
 ## Possible Enhancements
 
-- Export timetable to CSV or PDF
-- Build a GUI frontend
-- Add support for multiple departments
-- Implement a genetic algorithm version
+- Export timetable to CSV/PDF  
+- Add GUI interface  
+- Multi-department support  
+- Genetic algorithm optimization  
 
 ---
 
 ## License
 
-This project is open-source and free to use or modify.
+Open-source and free to modify.
+
+
+
+
+
