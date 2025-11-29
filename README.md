@@ -58,10 +58,10 @@ If a placement fails, it backtracks.
 
 ## Project Structure
 
-  `Exam_TimeTable_Generator/
-  │── menu_exam_timetable.c # Main program
-  │── README.md # Description
-  └── (optional files)`
+  Exam_TimeTable_Generator/ <br>
+  │── menu_exam_timetable.c # Main program <br>
+  │── README.md # Description <br>
+  └── (optional files) <br>
 
 ---
 
